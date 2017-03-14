@@ -16,9 +16,10 @@ class AdminController extends Controller
 
     public function staty(){
       $this->add_staty("statystyki");
-      //$staty = $this->read_staty("statystyki");
+      $staty = $this->read_staty("statystyki");
       //var_dump($staty);
-      return View('admin.staty_dashboard');
+      $i = 0;
+      return View('admin.staty_dashboard')->with('staty',$staty)->with('i',$i);
       
     }
     
@@ -49,7 +50,13 @@ class AdminController extends Controller
 	$id_users = $read2->id_usera;
 	$user = DB::select("select name from users where id = '$id_users'");
 	foreach($user as $user2) {
-	  $read2->name = $user2->name;
+	  if ($user2->name == "") {
+	    $read2->name = "anonim";
+	  }
+	  else {
+	    $read2->name = $user2->name;
+	  }
+	   //$read2->name = $user2->name;
 	}
 	$read3[0][$i] = $read2->name; 
 	$read3[1][$i] = $read2->page;

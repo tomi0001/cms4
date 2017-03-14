@@ -19,6 +19,21 @@
     <div class="row">
     <div class="col-xs-1">
 
+
+    
+    
+    
+@for ($i=0;$i < count($staty);$i++ ) 
+{{ $staty[1][$i] }}
+
+
+@endfor;
+
+
+
+
+
+
       </div>
       <div class="col-xs-2">
       User
