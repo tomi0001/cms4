@@ -18,20 +18,14 @@
     <!-- Your Page Content Here -->
     <div class="row">
     <div class="col-xs-1">
+  
+  
+  
+    
+
 
 
     
-    
-    
-@for ($i=0;$i < count($staty);$i++ ) 
-{{ $staty[1][$i] }}
-
-
-@endfor;
-
-
-
-
 
 
       </div>
@@ -47,6 +41,27 @@
       <div class="col-xs-3">
       HTTP_USER_AGENT
       </div>
+      
+          @for($i = 0;$i < count($staty);$i++)
+        <div class="col-xs-1">
+	
+      </div>
+      <div class="col-xs-2">
+      {{$staty[$i][0]}}
+      </div>
+      <div class="col-xs-3">
+      {{$staty[$i][1]}}
+      </div>
+      <div class="col-xs-3">
+      {{$staty[$i][2]}}
+      </div>
+      <div class="col-xs-3">
+      {{$staty[$i][3]}}
+      </div>
+    @endfor;
+    
+      
+      
     </div>
     
   </section>

@@ -43,30 +43,34 @@ class AdminController extends Controller
     
     private function read_staty($page) {
     
-      $read = DB::select("select page,id_usera,ip,http_user_agent,date from statystyk");
+      $read_staty = DB::select("select page,id_usera,ip,http_user_agent,date from statystyk");
       $i = 0;
-      $read3 = array();
-      foreach ($read as $read2) {
-	$id_users = $read2->id_usera;
+      
+      $read3_staty = array();
+      foreach ($read_staty as $read2_staty) {
+	//$read2->page = $read[0];
+	$id_users = $read2_staty->id_usera;
 	$user = DB::select("select name from users where id = '$id_users'");
 	foreach($user as $user2) {
 	  if ($user2->name == "") {
-	    $read2->name = "anonim";
+	    $read2_staty->name = "anonim";
 	  }
 	  else {
-	    $read2->name = $user2->name;
+	    $read2_staty->name = $user2->name;
 	  }
 	   //$read2->name = $user2->name;
 	}
-	$read3[0][$i] = $read2->name; 
-	$read3[1][$i] = $read2->page;
-	$read3[2][$i] = $read2->ip;
-	$read3[3][$i] = $read2->http_user_agent;
-	$read3[4][$i] = $read2->date;
+	$read_staty3[$i][0] = $read2_staty->name;
+	$read_staty3[$i][1] = $read2_staty->page;
+	$read_staty3[$i][2] = $read2_staty->ip;
+	$read_staty3[$i][3] = $read2_staty->http_user_agent;
+	$read_staty3[$i][4] = $read2_staty->date;
 	//print $read2->page;
 	$i++;
+      
       }
-      return $read3;
+      //var_dump($read2);
+      return $read_staty3;
       
     }
     
