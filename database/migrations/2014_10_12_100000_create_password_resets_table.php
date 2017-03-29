@@ -25,6 +25,7 @@ class CreatePasswordResetsTable extends Migration
             $table->string('ip',16);
             $table->integer('date');
             $table->string('http_user_agent',255);
+            $table->string('country',100);
             $table->timestamp('created_at')->nullable();
         });
     }

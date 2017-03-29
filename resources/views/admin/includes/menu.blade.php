@@ -256,6 +256,7 @@ desired effect
           <li><a href="#}"><i class="fa fa-home"></i> <span> Dashboard</span></a></li>
           <li><a href="#"><i class="fa fa-link"></i> <span>Grafik</span></a></li>
           <li><a href="#"><i class="fa fa-users"></i> <span>Użytkownicy</span></a></li>
+          <li><a href="/admin/staty"><i class="fa fa-users"></i> <span>Statystyki</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->
       </section>

@@ -98,7 +98,7 @@
       <div id = staty class="col-xs-11" >
       <div align=center>
       @for($i = 0;$i < count($draw);$i++)
-      <a class=dd href=/admin/staty/{{$draw[$i][1]}}/{{$draw[$i][2]}}> {{$draw[$i][0]}}</a>
+      <a class=dd href=/admin/staty/search/{{$draw[$i][1]}}/{{$draw[$i][2]}}/{{$search}}/{{$search2}}/{{$od}}/{{$do}}> {{$draw[$i][0]}}</a>
       
       @endfor;
       </div>

@@ -16,97 +16,86 @@
   <!-- Main content -->
   <section class="content">
     <!-- Your Page Content Here -->
+    @for ($i = 0;$i < count($staty);$i++)
     <div class="row">
-      
       <div class="col-xs-2">
-      <form method=post action= /admin/staty/search>
-      <input type=text name=search class=form-control size=8 placeholder=szukaj>
+
+      </div>
+      <div class="col-xs-4">
+      Użytkownik
+      </div>
+      <div class="col-xs-4">
+      {{$staty->id_usera}}
+      </div>
+
       
-      
-      </div>
-      <div class="col-xs-2">
-      
-      <select  name=search2 class=form-control placeholder=szukaj>
-      <option value=login>Po loginie</option>
-      <option value=page>Po Stronie</option>
-      <option value=ip>Po ip</option>
-      <option value=http>Po Http_user_agent</option>
-      </select>
-      </div>
-      
-      <div class="col-xs-1">
-      Przedział daty
-      </div>
-      <div class="col-md-2">
-      <input type=text name=od class=form-control size=8 placeholder=od>
-      </div>
-      <div class="col-md-2">
-      <input type=text name=do class=form-control size=8 placeholder=do>
-      </div>
-      <div class="col-md-2">
-      <button type=submit class="btn btn-primary">Szukaj</button>
-      </div>
-      {!! csrf_field() !!}
-      </form>
     </div>
-    <div class="row">
-      <div class="col-xs-1">
-  
-  
-  
-    
-
-
-
-    
-
-
-      </div>
+        <div class="row">
       <div class="col-xs-2">
-      User
+
       </div>
-      <div class="col-xs-3">
-      Strona
+      <div class="col-xs-4">
+      Data
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-4">
+      {{$staty->date}}
+      </div>
+
+      
+    </div>
+        <div class="row">
+      <div class="col-xs-2">
+
+      </div>
+      <div class="col-xs-4">
       Ip
       </div>
-      <div class="col-xs-3">
-      data
+      <div class="col-xs-4">
+      {{$staty->ip}}
       </div>
+
       
-          @for($i = 0;$i < count($staty);$i++)
-        <div class="col-xs-1">
-	
+    </div>
+        <div class="row">
+      <div class="col-xs-2">
+
       </div>
-      <div id = staty class="col-xs-2" >
-      <a href=/admin/staty/id/{{$staty[$i][4]}}>{{$staty[$i][0]}}</a>
+      <div class="col-xs-4">
+      Kraj
       </div>
-      <div class="col-xs-3">
-      {{$staty[$i][1]}}
+      <div class="col-xs-4">
+      {{$staty->country}}
       </div>
-      <div class="col-xs-3">
-      {{$staty[$i][2]}}
+
+      
+    </div>
+        <div class="row">
+      <div class="col-xs-2">
+
       </div>
-      <div class="col-xs-3">
-      {{$staty[$i][3]}}
+      <div class="col-xs-4">
+      Http user agent
       </div>
+      <div class="col-xs-4">
+      {{$staty->http_user_agent}}
+      </div>
+
+      
+    </div>
+        <div class="row">
+      <div class="col-xs-2">
+
+      </div>
+      <div class="col-xs-4">
+      Strona
+      </div>
+      <div class="col-xs-4">
+      {{$staty->page}}
+      </div>
+
+      
+    </div>
     @endfor;
-    </div>
-                <div class="row">
-      
-      <div id = staty class="col-xs-11" >
-      <div align=center>
-      @for($i = 0;$i < count($draw);$i++)
-      <a class=dd href=/admin/staty/{{$draw[$i][1]}}/{{$draw[$i][2]}}> {{$draw[$i][0]}}</a>
-      
-      @endfor;
-      </div>
-      </div>
-    
-      
-    </div>
-    
   </section>
 </div>
 <script>

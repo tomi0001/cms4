@@ -26,8 +26,34 @@ Route::get('/admin', [
   'roles' => ['Admin']
 ]);
 
- Route::get('/admin/staty', [
+ Route::get('/admin/staty/', [
+  'uses' => 'AdminController@staty2',
+  'middleware' => 'roles',
+  'roles' => ['Admin']
+]);
+ Route::get('/admin/staty/id/{id?}', [
+  'uses' => 'AdminController@staty3',
+  'middleware' => 'roles',
+  'roles' => ['Admin']
+]);
+ Route::get('/admin/staty/{start?}/{end?}', [
   'uses' => 'AdminController@staty',
+  'middleware' => 'roles',
+  'roles' => ['Admin']
+]);
+ Route::post('/admin/staty/search', [
+  'uses' => 'AdminController@staty4',
+  'middleware' => 'roles',
+  'roles' => ['Admin']
+]);
+ Route::get('/admin/staty/search/{start?}/{end?}/{search?}/{search2?}/{od?}/{do?}',  [
+  'uses' => 'AdminController@staty4',
+  'middleware' => 'roles',
+  'roles' => ['Admin']
+]);
+
+ Route::post('/admin/staty/search/', [
+  'uses' => 'AdminController@staty5',
   'middleware' => 'roles',
   'roles' => ['Admin']
 ]);

@@ -11,5 +11,6 @@
   <link rel="stylesheet" href="{{asset('css/skins/_all-skins.min.css')}}">
   <link rel="stylesheet" href="{{asset('/css/app.css')}}">
   <link rel="stylesheet" href="{{asset('css/sweetalert.css')}}">
+  <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 @yield('content')
